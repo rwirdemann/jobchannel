@@ -1,0 +1,41 @@
+{
+    // Verwendet IntelliSense zum Ermitteln möglicher Attribute.
+    // Zeigen Sie auf vorhandene Attribute, um die zugehörigen Beschreibungen anzuzeigen.
+    // Weitere Informationen finden Sie unter https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "main",
+            "type": "go",
+            "request": "launch",
+            "mode": "auto",
+            "program": "${workspaceFolder}/main.go",
+        },     
+        {
+            "name": "TestWrongVersion",
+            "type": "go",
+            "request": "launch",
+            "mode": "test",
+            "remotePath": "",
+            "program": "${workspaceFolder}/integration/get_configurations_test.go",
+            "buildFlags": "-tags integration",
+            "args": [
+                "-test.run",
+                "^TestWrongVersion$"
+            ]
+        },
+        {
+            "name": "TestOutdatedYear",
+            "type": "go",
+            "request": "launch",
+            "mode": "test",
+            "remotePath": "",
+            "program": "${workspaceFolder}/integration/get_configurations_test.go",
+            "buildFlags": "-tags integration",
+            "args": [
+                "-test.run",
+                "^TestOutdatedYear$"
+            ]
+        }
+    ]
+}
