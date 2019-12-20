@@ -1,6 +1,7 @@
 package main
 
 import (
+	"encoding/xml"
 	"net/http"
 
 	"github.com/aws/aws-lambda-go/events"
@@ -14,11 +15,22 @@ func main() {
 }
 
 func handler(r events.APIGatewayProxyRequest) events.APIGatewayProxyResponse {
+	var statusCode int
+	if isValidXML([]byte(r.Body)) {
+		statusCode = http.StatusOK
+	} else {
+		statusCode = http.StatusBadRequest
+	}
+
 	return events.APIGatewayProxyResponse{
-		StatusCode: http.StatusOK,
+		StatusCode: statusCode,
 		Headers: map[string]string{
 			"Access-Control-Allow-Origin":      "*",
 			"Access-Control-Allow-Credentials": "true",
 		},
 	}
+}
+
+func isValidXML(data []byte) bool {
+	return xml.Unmarshal(data, new(interface{})) == nil
 }
