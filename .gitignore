@@ -6,3 +6,4 @@ bin
 .env
 http-requests-log.http
 .vscode
+.DS_Store
