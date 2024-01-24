@@ -1,6 +1,6 @@
 service: recruiting
 
-frameworkVersion: ">=1.28.0 <2.0.0"
+frameworkVersion: ">=1.28.0 <=3.38.0"
 
 provider:
   name: aws
