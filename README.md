@@ -11,7 +11,7 @@ make deploy
 ### POST /jobs
 ```
 curl -v -X POST \
-  https://jkyszaoly5.execute-api.eu-central-1.amazonaws.com/dev/jobs \
+  https://77srys74sh.execute-api.eu-central-1.amazonaws.com/dev/jobs \
   -H 'Content-Type: application/xml' \
   -d '<job>
     <id>1234</id>

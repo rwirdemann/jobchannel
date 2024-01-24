@@ -8,10 +8,9 @@ provider:
   region: "eu-central-1"
 
 package:
-  exclude:
-    - ./**
-  include:
-    - ./bin/**
+  patterns:
+    - '!./**'
+    - './bin/**'
 
 functions:
   jobs:
